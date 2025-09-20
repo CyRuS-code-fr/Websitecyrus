@@ -1,3 +1,0 @@
-git add js/
-git commit -m "Added my-folder"
-git push origin main
