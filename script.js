@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function animateUserCount() {
     const userCountElement = document.getElementById('user-count');
     const guildCountElement = document.getElementById('guild-count');
-    const targetUserCount = 17020;
-    const targetGuildCount = 5;
+    const targetUserCount = '20k+';
+    const targetGuildCount = '10+';
     let currentUserCount = 0;
     let currentGuildCount = 0;
     const userIncrement = targetUserCount / 100;
