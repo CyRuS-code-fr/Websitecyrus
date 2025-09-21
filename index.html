@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aron - Advanced Discord Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Simple Analytics Integration -->
+    <script>
+        // Simple analytics tracking function
+        function trackPageView() {
+            console.log('📊 Page view tracked:', window.location.pathname);
+            
+            // You can add custom analytics tracking here
+            if (typeof gtag !== 'undefined') {
+                gtag('config', 'GA_MEASUREMENT_ID', {
+                    page_path: window.location.pathname
+                });
+            }
+        }
+
+        // Track page view on load
+        window.addEventListener('load', trackPageView);
+        console.log('✅ Analytics system initialized successfully');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Aron</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#gifhub" class="nav-link">GIF Hub</a>
+                <a href="#invite" class="nav-link">Invite</a>
+                <a href="https://discord.gg/q3dwaTGjmC" class="nav-link" target="_blank">Support</a>
+                <a href="https://youtube.com/@dgcyrus?si=W7GS37qiS_i8OhN_" class="nav-link" target="_blank">YouTube</a>
+                <a href="#privacy" class="nav-link">Privacy Policy</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-main">
+                <h1 class="hero-title">Aron</h1>
+                <div class="bot-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">USERS</span>
+                        <span class="stat-value" id="user-count">17020</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">GUILDS</span>
+                        <span class="stat-value" id="guild-count">5</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">STATUS</span>
+                        <span class="stat-value status-idle">ONLINE</span>
+                    </div>
+                </div>
+                <p class="hero-subtitle">
+                    Antinuke, Moderation,<br>
+                    Welcome, Voice, Logging,<br>
+                    Utility!
+                </p>
+                <p class="hero-command">
+                    Type <code>>help</code> to see the<br>
+                    commands!
+                </p>
+                <a href="https://discord.com/oauth2/authorize?client_id=1413981187805806735" class="add-button" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    ADD TO DISCORD
+                </a>
+                <div class="hero-buttons">
+                    <button class="cta-button secondary">
+                        <a href="https://discord.gg/q3dwaTGjmC" target="_blank" style="color: inherit; text-decoration: none;">Get Support</a>
+                    </button>
+                    <button class="cta-button youtube">
+                        <a href="https://youtube.com/@dgcyrus?si=W7GS37qiS_i8OhN_" target="_blank" style="color: inherit; text-decoration: none;">
+                            <i class="fab fa-youtube"></i> YouTube Channel
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-sidebar">
+                <h3>Features</h3>
+                <div class="feature-nav">
+                    <div class="feature-nav-item active" data-feature="antinuke">Antinuke</div>
+                    <div class="feature-nav-item" data-feature="moderation">Moderation</div>
+                    <div class="feature-nav-item" data-feature="welcome">Welcome</div>
+                    <div class="feature-nav-item" data-feature="utility">Utility</div>
+                    <div class="feature-nav-item" data-feature="logging">Logging</div>
+                    <div class="feature-nav-item" data-feature="automod">Automod</div>
+                    <div class="feature-nav-item" data-feature="voice">Voice</div>
+                    <div class="feature-nav-item" data-feature="customrole">Custom Role</div>
+                    <div class="feature-nav-item" data-feature="activity">Activity</div>
+                    <div class="feature-nav-item" data-feature="games">Games</div>
+                    <div class="feature-nav-item" data-feature="aronteam">Aron Team</div>
+                </div>
+            </div>
+
+            <div class="features-content">
+                <!-- Antinuke Feature -->
+                <div class="feature-card active" id="antinuke">
+                    <h2>Antinuke!</h2>
+                    <p>Antinuke in Discord involves bots and measures to prevent server attacks like nuke, channel deletions, and mass bans, ensuring server security.</p>
+                    <p>Use <code>>antinuke</code> to know about antinuke commands! If you want to enable antinuke from Aron Use <code>>antinuke enable</code> command!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-author">
+                                <img src="https://cdn.discordapp.com/avatars/123456789/avatar.png" alt="Bot Avatar">
+                                <span>Aron</span>
+                            </div>
+                            <div class="embed-content">
+                                <strong>🛡️ Antinuke Commands</strong><br>
+                                <small><strong>Main Commands:</strong></small><br>
+                                <code>>antinuke enable</code> - Enable antinuke protection<br>
+                                <code>>antinuke disable</code> - Disable antinuke protection<br>
+                                <code>>antinuke config</code> - View antinuke configuration<br>
+                                <code>>antinuke punishment</code> - Set punishment type<br>
+                                <code>>antinuke threshold</code> - Set action threshold<br><br>
+                                <small><strong>Whitelist Commands:</strong></small><br>
+                                <code>>whitelist add [user]</code> - Add user to whitelist<br>
+                                <code>>whitelist remove [user]</code> - Remove from whitelist<br>
+                                <code>>whitelist show</code> - Show whitelist<br>
+                                <code>>unwhitelist [user]</code> - Quick unwhitelist
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moderation Feature -->
+                <div class="feature-card" id="moderation">
+                    <h2>Moderation!</h2>
+                    <p>Comprehensive moderation tools to keep your server organized and safe. Ban, kick, mute, warn, and manage your community effectively.</p>
+                    <p>Use <code>$help moderation</code> to see all moderation commands available!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🔨 Moderation Commands</strong><br>
+                                <small><strong>User Actions:</strong></small><br>
+                                <code>$ban [user] [reason]</code> - Ban a user<br>
+                                <code>$unban [user]</code> - Unban a user<br>
+                                <code>$kick [user] [reason]</code> - Kick a user<br>
+                                <code>$mute [user] [time] [reason]</code> - Mute/timeout a user<br>
+                                <code>$unmute [user]</code> - Unmute a user<br>
+                                <code>$warn [user] [reason]</code> - Warn a user<br><br>
+                                <small><strong>Channel Management:</strong></small><br>
+                                <code>$lock [channel]</code> - Lock a channel<br>
+                                <code>$unlock [channel]</code> - Unlock a channel<br>
+                                <code>$hide [channel]</code> - Hide a channel<br>
+                                <code>$unhide [channel]</code> - Unhide a channel<br><br>
+                                <small><strong>Message Management:</strong></small><br>
+                                <code>$clear [amount]</code> - Clear messages<br>
+                                <code>$clearuser [user] [amount]</code> - Clear user messages<br>
+                                <code>$snipe</code> - Show deleted messages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Welcome Feature -->
+                <div class="feature-card" id="welcome">
+                    <h2>Welcome!</h2>
+                    <p>Welcome is one of the commands in Aron, offering several subcommands such as autorole, welcome, welcomechannel, welcomemessage, and more.</p>
+                    <p>The Autorole command is used to automatically assign a role to any member who joins your server. The bot will handle this process seamlessly.</p>
+                    <p>The Welcome command is an embed-based feature that allows you to set a greeting embed in your server. When a new member joins, the bot will greet them with this customized embed.</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>👋 Welcome Commands</strong><br>
+                                <small><strong>Welcome System:</strong></small><br>
+                                <code>$greet setup</code> - Setup welcome messages<br>
+                                <code>$greet reset</code> - Reset welcome config<br>
+                                <code>$greet channel [#channel]</code> - Set welcome channel<br>
+                                <code>$greet edit</code> - Edit welcome message<br>
+                                <code>$greet test</code> - Test welcome message<br>
+                                <code>$greet config</code> - View current settings<br><br>
+                                <small><strong>Auto Role:</strong></small><br>
+                                <code>$autorole [role]</code> - Set auto role for new members<br>
+                                <code>$autorole remove</code> - Remove auto role<br><br>
+                                <small><strong>Fast Greet:</strong></small><br>
+                                <code>$fastgreet_add [message]</code> - Add quick greet<br>
+                                <code>$fastgreet_remove [id]</code> - Remove quick greet<br>
+                                <code>$fastgreet_list</code> - List all quick greets
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Utility Feature -->
+                <div class="feature-card" id="utility">
+                    <h2>Utility!</h2>
+                    <p>In the Utility section, you will find common commands that are available in every bot, such as afk, ping, steal banner, avatar, membercount, and more.</p>
+                    <p>Example <code>$avatar @username</code> This command will display the avatar of the specified user!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🔧 Utility Commands</strong><br>
+                                <small><strong>User Info:</strong></small><br>
+                                <code>$avatar [user]</code> - Show user avatar<br>
+                                <code>$banner user [user]</code> - Show user banner<br>
+                                <code>$banner server</code> - Show server banner<br>
+                                <code>$userinfo [user]</code> - Show user information<br><br>
+                                <small><strong>Server Info:</strong></small><br>
+                                <code>$serverinfo</code> - Show server information<br>
+                                <code>$membercount</code> - Show member count<br>
+                                <code>$roleinfo [role]</code> - Show role information<br><br>
+                                <small><strong>Bot & Misc:</strong></small><br>
+                                <code>$ping</code> - Show bot latency<br>
+                                <code>$botinfo</code> - Show bot information<br>
+                                <code>$afk [reason]</code> - Set AFK status<br>
+                                <code>$steal [emoji]</code> - Steal emoji/sticker<br>
+                                <code>$qr [text]</code> - Generate QR code<br>
+                                <code>$translate [text]</code> - Translate text
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music Feature -->
+                <div class="feature-card" id="music">
+                    <h2>Music!</h2>
+                    <p>High-quality music streaming with support for multiple platforms including YouTube, Spotify, JioSaavn, and SoundCloud. Advanced queue management and 24/7 mode available.</p>
+                    <p>Use <code>$play [song name]</code> to start playing music in your voice channel!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🎵 Music Commands</strong><br>
+                                <small><strong>Playback:</strong></small><br>
+                                <code>$play [song]</code> - Play music from multiple sources<br>
+                                <code>$search [query]</code> - Search across platforms<br>
+                                <code>$pause</code> - Pause current track<br>
+                                <code>$resume</code> - Resume playback<br>
+                                <code>$skip</code> - Skip current song<br>
+                                <code>$stop</code> - Stop and clear queue<br><br>
+                                <small><strong>Queue Management:</strong></small><br>
+                                <code>$queue</code> - Show current queue<br>
+                                <code>$shuffle</code> - Shuffle queue<br>
+                                <code>$loop</code> - Toggle loop mode<br>
+                                <code>$clearqueue</code> - Clear entire queue<br><br>
+                                <small><strong>Controls:</strong></small><br>
+                                <code>$volume [1-150]</code> - Set volume<br>
+                                <code>$seek [percentage]</code> - Seek to position<br>
+                                <code>$nowplaying</code> - Show current song<br>
+                                <code>$autoplay</code> - Toggle autoplay<br>
+                                <code>$247 [on/off]</code> - 24/7 mode (Admin only)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Content Feature -->
+                <div class="feature-card" id="daily">
+                    <h2>Daily Content!</h2>
+                    <p>Automated daily shayari and motivational thoughts system powered by AI. Keep your community engaged with fresh content every day at 9 AM IST.</p>
+                    <p>Use <code>$daily setup</code> to configure daily content for your server!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>📅 Daily Content Commands</strong><br>
+                                <small><strong>Setup Commands:</strong></small><br>
+                                <code>$daily setup [#shayari] [#thoughts] [count]</code> - Setup channels<br>
+                                <code>$daily config</code> - View current configuration<br>
+                                <code>$daily test [shayari/thought]</code> - Test content<br>
+                                <code>$daily remove</code> - Remove setup<br><br>
+                                <small><strong>Features:</strong></small><br>
+                                • AI-powered content generation (ChatGPT & Gemini)<br>
+                                • Customizable posting schedule<br>
+                                • Hindi shayari with English translations<br>
+                                • Motivational thoughts and quotes<br>
+                                • Automatic daily posting at 9 AM IST<br>
+                                • Configurable content count (1-10 per day)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ship Feature -->
+                <div class="feature-card" id="ship">
+                    <h2>Ship!</h2>
+                    <p>Fun compatibility testing between server members with gender-based matching and beautiful generated images. Perfect for community engagement and entertainment.</p>
+                    <p>Use <code>$ship @user1 @user2</code> to see compatibility between users!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>💕 Ship Commands</strong><br>
+                                <small><strong>Main Commands:</strong></small><br>
+                                <code>$ship [user1] [user2]</code> - Ship two users together<br>
+                                <code>$ship</code> - Auto-ship with random opposite gender<br>
+                                <code>$shipsetup @boy_role @girl_role</code> - Setup gender roles<br>
+                                <code>$shipconfig</code> - View current ship configuration<br><br>
+                                <small><strong>Features:</strong></small><br>
+                                • Beautiful generated ship images<br>
+                                • Gender-based intelligent matching<br>
+                                • Compatibility percentage calculation<br>
+                                • Daily consistent results<br>
+                                • Customizable gender role system<br>
+                                • Visual progress bars and emoji indicators
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ignore System Feature -->
+                <div class="feature-card" id="ignore">
+                    <h2>Ignore System!</h2>
+                    <p>Comprehensive command management system to control where and by whom bot commands can be used. Essential for server organization and moderation.</p>
+                    <p>Use <code>>ignore command add [command]</code> to disable specific commands!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🚫 Ignore Commands</strong><br>
+                                <small><strong>Command Management:</strong></small><br>
+                                <code>>ignore command add [command]</code> - Disable command<br>
+                                <code>>ignore command remove [command]</code> - Enable command<br>
+                                <code>>ignore command show</code> - List ignored commands<br><br>
+                                <small><strong>Channel Management:</strong></small><br>
+                                <code>>ignore channel add [#channel]</code> - Ignore channel<br>
+                                <code>>ignore channel remove [#channel]</code> - Unignore channel<br>
+                                <code>>ignore channel show</code> - List ignored channels<br><br>
+                                <small><strong>User Management:</strong></small><br>
+                                <code>>ignore user add [@user]</code> - Ignore user<br>
+                                <code>>ignore user remove [@user]</code> - Unignore user<br>
+                                <code>>ignore user show</code> - List ignored users<br><br>
+                                <small><strong>Bypass System:</strong></small><br>
+                                <code>>ignore bypass add [@user]</code> - Add bypass user<br>
+                                <code>>ignore bypass remove [@user]</code> - Remove bypass<br>
+                                <code>>ignore bypass show</code> - List bypass users
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ticket System Feature -->
+                <div class="feature-card" id="ticket">
+                    <h2>Ticket System!</h2>
+                    <p>Professional ticket management system with advanced features like transcripts, ratings, priorities, and comprehensive analytics. Perfect for customer support.</p>
+                    <p>Use <code>$ticketsetup</code> to create your professional ticket panel!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🎫 Ticket Commands</strong><br>
+                                <small><strong>Setup & Management:</strong></small><br>
+                                <code>$ticketsetup</code> - Interactive ticket panel setup<br>
+                                <code>$ticketstats</code> - View server ticket statistics<br>
+                                <code>$claim</code> - Claim ticket ownership<br>
+                                <code>$closeticket</code> - Close with transcript options<br><br>
+                                <small><strong>User Management:</strong></small><br>
+                                <code>$adduser [@user]</code> - Add user to ticket<br>
+                                <code>$removeuser [@user]</code> - Remove user from ticket<br>
+                                <code>$priority [high/medium/low]</code> - Set priority level<br><br>
+                                <small><strong>Advanced Features:</strong></small><br>
+                                <code>$rate [1-5] [feedback]</code> - Rate ticket experience<br>
+                                <code>$transcript</code> - Generate detailed transcript<br>
+                                • Multiple ticket categories with staff roles<br>
+                                • Automatic transcripts with message history<br>
+                                • Rating system with feedback collection<br>
+                                • Priority levels and claim system<br>
+                                • Database persistence with analytics
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Role Feature -->
+                <div class="feature-card" id="customrole">
+                    <h2>Custom Role!</h2>
+                    <p>With this command, you can quickly assign roles to users. For example, if you have set up a VIP role and you want to assign it to a user, simply use the command</p>
+                    <p><code>$vip @username</code> Executing this command will assign the VIP role to the specified user swiftly!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>⭐ Custom Role Commands</strong><br>
+                                <small><strong>Role Management:</strong></small><br>
+                                <code>$role all [role]</code> - Give role to all members<br>
+                                <code>$role bots [role]</code> - Give role to all bots<br>
+                                <code>$role humans [role]</code> - Give role to all humans<br>
+                                <code>$customrole setup</code> - Setup custom roles<br><br>
+                                <small><strong>Vanity Roles:</strong></small><br>
+                                <code>$vanity setup</code> - Setup vanity roles<br>
+                                <code>$vanity reset</code> - Reset vanity config<br>
+                                <code>$vanity show</code> - Show vanity roles<br><br>
+                                <small><strong>Reaction Roles:</strong></small><br>
+                                <code>$createrr</code> - Create reaction role<br>
+                                <code>$dmrr</code> - DM reaction role setup
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logging Feature -->
+                <div class="feature-card" id="logging">
+                    <h2>Logging!</h2>
+                    <p>Advanced logging system to track all server activities and changes for better server management.</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>📄 Logging Commands</strong><br>
+                                <small><strong>Setup Commands:</strong></small><br>
+                                <code>$loggingsetup</code> - Setup general logging<br>
+                                <code>$antinukelogsetup</code> - Setup antinuke logs<br>
+                                <code>$moderationlogsetup</code> - Setup moderation logs<br>
+                                <code>$setupalllogchannels</code> - Setup all log channels<br>
+                                <code>$removelogs</code> - Remove logging setup
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automod Feature -->
+                <div class="feature-card" id="automod">
+                    <h2>Automod!</h2>
+                    <p>Automatic moderation to prevent spam, inappropriate content, and maintain server quality.</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🤖 Automod Commands</strong><br>
+                                <small><strong>Anti-Spam Protection:</strong></small><br>
+                                <code>$automod antispam enable</code> - Enable anti-spam<br>
+                                <code>$automod anticaps enable</code> - Enable anti-caps<br>
+                                <code>$automod antilink enable</code> - Enable anti-link<br>
+                                <code>$automod antiinvite enable</code> - Enable anti-invite<br>
+                                <code>$automod antimention enable</code> - Enable anti-mass mention<br>
+                                <code>$automod antiemoji enable</code> - Enable anti-emoji spam
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Feature -->
+                <div class="feature-card" id="voice">
+                    <h2>Voice!</h2>
+                    <p>Voice channel management and music features for enhanced server entertainment.</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🎤 Voice Commands</strong><br>
+                                <small><strong>Voice Management:</strong></small><br>
+                                <code>$voice kick [user]</code> - Kick from voice<br>
+                                <code>$voice mute [user]</code> - Voice mute user<br>
+                                <code>$voice unmute [user]</code> - Voice unmute user<br>
+                                <code>$voice move [user] [channel]</code> - Move user<br>
+                                <code>$voice lock [channel]</code> - Lock voice channel<br>
+                                <code>$voice unlock [channel]</code> - Unlock voice channel<br><br>
+                                <small><strong>Music Commands:</strong></small><br>
+                                <code>$play [song]</code> - Play music<br>
+                                <code>$skip</code> - Skip current song<br>
+                                <code>$stop</code> - Stop music<br>
+                                <code>$queue</code> - Show music queue<br>
+                                <code>$volume [1-100]</code> - Set volume<br>
+                                <code>$loop</code> - Toggle loop mode
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Tracking Feature -->
+                <div class="feature-card" id="activity">
+                    <h2>Activity Tracking!</h2>
+                    <p>Advanced message and voice channel activity tracking system with detailed statistics and leaderboards. Monitor server engagement and member activity in real-time.</p>
+                    <p>Type <code>>activity</code> for activity commands help!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>📊 Activity Tracking Commands</strong><br>
+                                <small><strong>Tracking Controls:</strong></small><br>
+                                <code>>messagetracking [on/off]</code> - Toggle message tracking<br>
+                                <code>>voicetracking [on/off]</code> - Toggle voice tracking<br>
+                                <code>>setupupdates [#channel] [interval]</code> - Setup activity updates<br><br>
+                                <small><strong>User Statistics:</strong></small><br>
+                                <code>>messagestats [@user]</code> - View message statistics<br>
+                                <code>>voicestats [@user]</code> - View voice statistics<br>
+                                <code>>userstats [@user]</code> - View combined activity stats<br><br>
+                                <small><strong>Leaderboards:</strong></small><br>
+                                <code>>messageleaderboard [limit]</code> - Top message senders<br>
+                                <code>>voiceleaderboard [limit]</code> - Top voice users<br>
+                                <code>>activityleaderboard [limit]</code> - Today's most active<br><br>
+                                <small><strong>Management:</strong></small><br>
+                                <code>>resetstats [@user]</code> - Reset user statistics<br>
+                                <code>>clearmessagestats [@user]</code> - Clear message stats<br>
+                                <code>>clearvoicestats [@user]</code> - Clear voice stats<br>
+                                <code>>verifyclear [@user]</code> - Verify cleared stats
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Games Feature -->
+                <div class="feature-card" id="games">
+                    <h2>Games!</h2>
+                    <p>Interactive games to keep your server members entertained. Play classic games like Chess, Tic-Tac-Toe, and many more with friends or against the bot!</p>
+                    <p>Use <code>>chess @user</code> to challenge someone to a game of chess!</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🎮 Games Commands</strong><br>
+                                <small><strong>Strategy Games:</strong></small><br>
+                                <code>>chess [@user]</code> - Play chess with another user<br>
+                                <code>>tic-tac-toe [@user]</code> - Play tic-tac-toe (ttt, tictactoe)<br>
+                                <code>>connect-four [@user]</code> - Play Connect Four (c4, connect4)<br>
+                                <code>>battleship [@user]</code> - Play battleship with a friend<br><br>
+                                <small><strong>Single Player Games:</strong></small><br>
+                                <code>>wordle</code> - Play the popular word guessing game<br>
+                                <code>>2048</code> - Play the number sliding puzzle game<br>
+                                <code>>memory-game</code> - Test your memory skills<br>
+                                <code>>number-slider</code> - Slide numbers puzzle game<br>
+                                <code>>lights-out</code> - Turn off all the lights puzzle<br><br>
+                                <small><strong>Quick Games:</strong></small><br>
+                                <code>>rps [@user]</code> - Rock Paper Scissors (rockpaperscissors)<br>
+                                <code>>blackjack</code> - Play blackjack against the bot<br>
+                                <code>>slots</code> - Try your luck with slot machine<br><br>
+                                <small><strong>Guessing Games:</strong></small><br>
+                                <code>>country-guesser start</code> - Guess countries by flags<br>
+                                • AI-generated flags for extra challenge<br>
+                                • 100 seconds time limit with hints<br>
+                                • Multiplayer support for competitive fun
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aron Team Feature -->
+                <div class="feature-card" id="aronteam">
+                    <h2>Aron Team - Complete Bot Details!</h2>
+                    <p>Meet Aron - Your ultimate Discord companion with 271+ commands and advanced AI-powered features. Built with premium technology and exclusive team features.</p>
+                    <div class="command-preview">
+                        <div class="discord-embed">
+                            <div class="embed-content">
+                                <strong>🤖 About Aron Bot (ubt#8269)</strong><br>
+                                <small><strong>Bot Statistics:</strong></small><br>
+                                • Connected to 5 Premium Guilds<br>
+                                • Serving 17,021+ Active Users<br>
+                                • 271 Total Commands Available<br>
+                                • 100+ Slash Commands Integration<br>
+                                • Auto-Sharded Architecture (2 Shards)<br>
+                                • 24/7 Uptime with Premium Infrastructure<br><br>
+                                
+                                <strong>👑 Aron Team</strong><br>
+                                <small><strong>Owners:</strong></small><br>
+                                <img src="cyrus-pfp.png" alt="Cyrus Profile" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; vertical-align: middle;"> • <@1323186302002139148> Cyrus (Main Owner)<br>
+                                <img src="madhav-pfp.png" alt="Madhav Profile" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; vertical-align: middle;"> • <@1226521410500038689> Madhav (Co-Owner)<br><br>
+                                <small><strong>Developer:</strong></small><br>
+                                <img src="cyrus-pfp.png" alt="Cyrus Profile" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; vertical-align: middle;"> • <@1323186302002139148> Cyrus (Lead Developer)<br><br>
+                                <small><strong>Administrator:</strong></small><br>
+                                <img src="madhav-pfp.png" alt="Madhav Profile" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; vertical-align: middle;"> • <@1226521410500038689> Madhav (Server Admin)<br><br>
+                                <small><strong>Partner/Support Server:</strong></small><br>
+                                • https://discord.gg/q3dwaTGjmC<br><br>
+                                
+                                <strong>🏗️ Technical Architecture</strong><br>
+                                <small><strong>Core Framework:</strong></small><br>
+                                • Built with discord.py (Latest Version)<br>
+                                • Auto-Sharded Bot with Custom Command Framework<br>
+                                • SQLite Database with 25+ Specialized Databases<br>
+                                • Lavalink Music Nodes (UK & RRH Servers)<br>
+                                • AI Integration (ChatGPT & Google Gemini)<br>
+                                • Advanced Cog-based Modular System<br><br>
+                                
+                                <strong>🛡️ Security & Protection Suite</strong><br>
+                                <small><strong>Antinuke System (25+ Commands):</strong></small><br>
+                                • Real-time server protection against raids<br>
+                                • Intelligent whitelist management<br>
+                                • Auto-punishment system with customizable thresholds<br>
+                                • Protection against: Ban/Kick spam, Channel deletion, Role manipulation<br>
+                                • Emergency lockdown capabilities<br><br>
+                                
+                                <strong>🔨 Advanced Moderation (35+ Commands)</strong><br>
+                                <small><strong>User Management:</strong></small><br>
+                                • Ban/Unban with reason tracking<br>
+                                • Timeout/Mute system with duration control<br>
+                                • Warning system with persistent storage<br>
+                                • Kick with detailed logging<br><br>
+                                <small><strong>Channel Management:</strong></small><br>
+                                • Lock/Unlock channels with role permissions<br>
+                                • Hide/Unhide channels from users<br>
+                                • Mass message deletion with user filtering<br>
+                                • Snipe deleted/edited messages<br><br>
+                                
+                                <strong>🎵 Premium Music System (40+ Commands)</strong><br>
+                                <small><strong>Multi-Platform Support:</strong></small><br>
+                                • YouTube, Spotify, SoundCloud, JioSaavn<br>
+                                • High-quality audio streaming (up to 320kbps)<br>
+                                • Advanced queue management with shuffle/loop<br>
+                                • 24/7 mode for continuous music<br>
+                                • Volume control (1-150%) with bass boost<br>
+                                • Seek functionality and autoplay<br><br>
+                                
+                                <strong>👋 Smart Welcome System (20+ Commands)</strong><br>
+                                <small><strong>Automated Greetings:</strong></small><br>
+                                • Custom embed-based welcome messages<br>
+                                • Auto-role assignment for new members<br>
+                                • Fast greet system with multiple templates<br>
+                                • Welcome channel configuration<br>
+                                • Member join/leave tracking<br><br>
+                                
+                                <strong>🎮 Interactive Games Hub (25+ Commands)</strong><br>
+                                <small><strong>Strategy Games:</strong></small><br>
+                                • Chess with full board visualization<br>
+                                • Tic-Tac-Toe, Connect Four, Battleship<br>
+                                • Country Guesser with AI-generated flags<br><br>
+                                <small><strong>Single Player:</strong></small><br>
+                                • Wordle, 2048, Memory Game<br>
+                                • Number Slider, Lights Out puzzle<br>
+                                • Blackjack, Slots with virtual currency<br><br>
+                                
+                                <strong>🎫 Professional Ticket System (10+ Commands)</strong><br>
+                                <small><strong>Advanced Support Features:</strong></small><br>
+                                • Multi-category ticket creation<br>
+                                • Staff claim system with role management<br>
+                                • Automatic transcript generation with HTML export<br>
+                                • Priority levels (High, Medium, Low)<br>
+                                • Rating system with feedback collection<br>
+                                • User management (add/remove from tickets)<br><br>
+                                
+                                <strong>📊 Activity Tracking & Analytics (15+ Commands)</strong><br>
+                                <small><strong>Comprehensive Statistics:</strong></small><br>
+                                • Message activity tracking per user/channel<br>
+                                • Voice channel time tracking<br>
+                                • Real-time leaderboards (daily, weekly, monthly)<br>
+                                • Automated activity reports<br>
+                                • Combined stats with visual progress bars<br><br>
+                                
+                                <strong>🤖 AI-Powered Automod (20+ Commands)</strong><br>
+                                <small><strong>Intelligent Protection:</strong></small><br>
+                                • Anti-spam with customizable thresholds<br>
+                                • Anti-caps, Anti-link, Anti-invite detection<br>
+                                • Mass mention protection<br>
+                                • Emoji spam prevention<br>
+                                • Smart punishment escalation<br><br>
+                                
+                                <strong>🎆 Exclusive Aron Team Features</strong><br>
+                                <small><strong>Premium Commands:</strong></small><br>
+                                <code>>brand setup</code> - Advanced server branding<br>
+                                <code>>analytics premium</code> - Detailed analytics dashboard<br>
+                                <code>>custom features</code> - Exclusive customizations<br>
+                                <code>>priority support</code> - Direct developer access<br><br>
+                                <small><strong>AI-Powered Features:</strong></small><br>
+                                • Daily Shayari & Motivational Content (ChatGPT & Gemini)<br>
+                                • Ship compatibility with intelligent matching<br>
+                                • Custom AI responses and interactions<br>
+                                • Smart content generation<br><br>
+                                
+                                <strong>🔧 Utility & Management (30+ Commands)</strong><br>
+                                <small><strong>Server Tools:</strong></small><br>
+                                • Complete server/user information displays<br>
+                                • Avatar, banner, and media management<br>
+                                • QR code generation and translation services<br>
+                                • AFK system with automatic status management<br>
+                                • Emoji/sticker stealing with smart integration<br><br>
+                                
+                                <strong>📋 Advanced Logging System (15+ Commands)</strong><br>
+                                <small><strong>Comprehensive Tracking:</strong></small><br>
+                                • Moderation action logging<br>
+                                • Antinuke event tracking<br>
+                                • Member join/leave logs<br>
+                                • Message edit/delete tracking<br>
+                                • Voice activity monitoring<br><br>
+                                
+                                <strong>🎭 Custom Roles & Reactions (20+ Commands)</strong><br>
+                                <small><strong>Role Management:</strong></small><br>
+                                • Mass role assignment (all/bots/humans)<br>
+                                • Reaction role system with multiple configurations<br>
+                                • Vanity roles with custom permissions<br>
+                                • Automated role management<br><br>
+                                
+                                <strong>🚫 Advanced Ignore System (15+ Commands)</strong><br>
+                                <small><strong>Command Control:</strong></small><br>
+                                • Command-specific ignoring<br>
+                                • Channel and user-based restrictions<br>
+                                • Bypass system for administrators<br>
+                                • Granular permission control<br><br>
+                                
+                                <strong>💎 Premium Database Architecture</strong><br>
+                                <small><strong>Data Management:</strong></small><br>
+                                • 25+ Specialized SQLite databases<br>
+                                • Real-time data synchronization<br>
+                                • Backup and recovery systems<br>
+                                • Optimized query performance<br>
+                                • Data persistence across restarts<br><br>
+                                
+                                <strong>🌐 Web Integration</strong><br>
+                                <small><strong>Online Features:</strong></small><br>
+                                • Dedicated website with live statistics<br>
+                                • GIF Hub with Tenor API integration<br>
+                                • Real-time server monitoring<br>
+                                • Command documentation portal<br><br>
+                                
+                                <strong>🎯 Quick Command Reference</strong><br>
+                                <small><strong>Essential Commands:</strong></small><br>
+                                <code>>help</code> - Complete command list (271 commands)<br>
+                                <code>>invite</code> - Bot invitation link<br>
+                                <code>>support</code> - Official support server<br>
+                                <code>>ping</code> - Bot latency and status<br>
+                                <code>>stats</code> - Bot statistics and information<br><br>
+                                
+                                <strong>📞 Support & Community</strong><br>
+                                • 24/7 Support Server: https://discord.gg/q3dwaTGjmC<br>
+                                • Direct Developer Support for Premium Users<br>
+                                • Regular Updates and Feature Additions<br>
+                                • Community-driven Feature Requests<br>
+                                • Comprehensive Documentation and Guides
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GIF Hub Section -->
+    <section id="gifhub" class="gif-hub">
+        <div class="container">
+            <h2>GIF Hub</h2>
+            <p>Search and discover trending GIFs for your Aron Discord server!</p>
+
+            <div class="gif-search">
+                <div class="search-container">
+                    <input type="text" id="gif-search-input" placeholder="Search for GIFs...">
+                    <button id="gif-search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-filters">
+                    <button class="filter-btn active" data-category="trending">Trending</button>
+                    <button class="filter-btn" data-category="reactions">Reactions</button>
+                    <button class="filter-btn" data-category="anime">Anime</button>
+                    <button class="filter-btn" data-category="memes">Memes</button>
+                    <button class="filter-btn" data-category="gaming">Gaming</button>
+                </div>
+            </div>
+
+            <div class="gif-grid" id="gif-grid">
+                <!-- GIFs will be loaded here -->
+                <div class="gif-placeholder">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading GIFs...</p>
+                </div>
+            </div>
+
+            <div class="gif-modal" id="gif-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <img id="modal-gif" src="" alt="GIF">
+                    <div class="gif-info">
+                        <p id="gif-title"></p>
+                        <button id="copy-gif-url">Copy URL</button>
+                        <button id="download-gif">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Aron Bot</h3>
+                    <p>Advanced Discord bot with comprehensive features for server management and entertainment.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://discord.com/oauth2/authorize?client_id=1413981187805806735" target="_blank">Invite Bot</a></li>
+                        <li><a href="https://discord.gg/q3dwaTGjmC" target="_blank">Support Server</a></li>
+                        <li><a href="https://youtube.com/@dgcyrus?si=W7GS37qiS_i8OhN_" target="_blank">YouTube Channel</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#features">Antinuke</a></li>
+                        <li><a href="#features">Moderation</a></li>
+                        <li><a href="#features">Welcome System</a></li>
+                        <li><a href="#gifhub">GIF Hub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aron Bot. All rights reserved.</p>
+                <p>Join <a href="https://discord.gg/q3dwaTGjmC" target="_blank" style="color: #5865f2; text-decoration: none;">Support Server</a> for more info and help!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
